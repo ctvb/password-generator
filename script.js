@@ -1,27 +1,9 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-var button = document.clickButton("click");
+var generateBtn = document.querySelector('#generate');
 
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
-function generatePassword() {
-  var length = 8, 
-      charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*",
-      retVal = "";
-      button = prompt("How many characters?");
-  for (var i = 0, n = charset.length; i < length, ++i;) {
-    retVal += charset.charAt(Math.floor(Math.random() * n));
-  }
-  return retVal;
-}
-
+var upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var lower = 'abcdefghijklmnopqrstuvwxyz';
+var number = '1234567890';
+var special = '!@#$%^&*()';
 
 
 // Add prompt asking password character options + length
