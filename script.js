@@ -1,5 +1,6 @@
 var generateBtn = document.querySelector('#generate');
 
+  // THESE GIVE OPTIONS FOR WHAT TYPE OF CHARACTERS THE PASSWORD CONTAINS
 var upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 var lower = 'abcdefghijklmnopqrstuvwxyz';
 var number = '1234567890';
@@ -15,29 +16,33 @@ function writePassword() {
 function generatePassword() {
   var charLength = prompt('How long do you want the password?');
   
-  if (charLength = 8 || charLength = 128) {
-    alert('Passwoed must be between 8 and 128 characters.');
+  // THIS IF STATEMENT LIMITS THE PASSWORDS CHARACTER LENGTH TO BE BETWEEN 8 AND 128
+  if (charLength < 8 || charLength > 128) {
+    alert('Password must be between 8 and 128 characters.');
     generatePassword();
   }
 
-  var choice = ''
+  // THIS MAKES THE USERS CHOICE INTO A STRING
+  var choice = '';
 
+  // THESE HAVE THE USER CONFIRM WHAT TYPES OF CHARACTERS THEY WANT IN THEIR PASSWORD
   var upperChoice = confirm('Do you want uppercase?');
   var lowerChoice = confirm('Do you want lowercase?');
   var numberChoice = confirm('Do you want numbers?');
-  var specialChoice = confirm('Do you want special characters?')
+  var specialChoice = confirm('Do you want special characters?');
 
+  // THESE IF STATEMENTS WILL TRACK THE USERS CHOICE AND GIVE A MESSAGE THAT THEY MUST PICK AT LEAST ONE CHARACTER TYPE IF THEY PICKED NONE
   if (upperChoice) {
-    choice = upper;
+    choice += upper;
   }
   if (lowerChoice) {
-    choice = lower;
+    choice += lower;
   }
   if (numberChoice) {
-    choice = number;
+    choice += number;
   }
   if (specialChoice) {
-    choice = special;
+    choice += special;
   }
 
   if (choice === '') {
@@ -45,9 +50,10 @@ function generatePassword() {
     return;
   }
 
-  var password = ''
+  // THIS VARIABLE TURNS THE PASSWORD INTO A STRING
+  var password = '';
 
-  for (var count = 0, count < charLength; count++) {
+  for (var count = 0; count < charLength; count++) {
     var index = Math.floor(Math.random() * choice.length);
     password = choice[index];
   }
@@ -55,7 +61,7 @@ function generatePassword() {
   return password;
 }
 
-generaateBtn.addEventListener(clickm writePassword);
+generateBtn.addEventListener('click', writePassword);
 
 
 // // Add copy button
