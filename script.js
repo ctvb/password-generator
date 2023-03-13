@@ -5,6 +5,12 @@ var lower = 'abcdefghijklmnopqrstuvwxyz';
 var number = '1234567890';
 var special = '!@#$%^&*()';
 
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector('#password');
+
+  passwordText.value = password;
+}
 
 // Add prompt asking password character options + length
 
