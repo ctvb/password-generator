@@ -14,6 +14,18 @@ function writePassword() {
 
 function generatePassword() {
   var charLength = prompt('How long do you want the password?');
+  
+  if (charLength = 8 || charLength = 128) {
+    alert('Passwoed must be between 8 and 128 characters.');
+    generatePassword();
+  }
+
+  var choice = ''
+
+  var upperChoice = confirm('Do you want uppercase?');
+  var lowerChoice = confirm('Do you want lowercase?');
+  var numberChoice = confirm('Do you want numbers?');
+  var specialChoice = confirm('Do you want special characters?')
 // Add prompt asking password character options + length
 
 
