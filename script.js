@@ -26,11 +26,36 @@ function generatePassword() {
   var lowerChoice = confirm('Do you want lowercase?');
   var numberChoice = confirm('Do you want numbers?');
   var specialChoice = confirm('Do you want special characters?')
-// Add prompt asking password character options + length
 
+  if (upperChoice) {
+    choice = upper;
+  }
+  if (lowerChoice) {
+    choice = lower;
+  }
+  if (numberChoice) {
+    choice = number;
+  }
+  if (specialChoice) {
+    choice = special;
+  }
 
-// Add event listener to generate button
-// generateBtn.addEventListener("click", writePassword);
+  if (choice === '') {
+    alert('Password must contain at least one type of character.');
+    return;
+  }
+
+  var password = ''
+
+  for (var count = 0, count < charLength; count++) {
+    var index = Math.floor(Math.random() * choice.length);
+    password = choice[index];
+  }
+
+  return password;
+}
+
+generaateBtn.addEventListener(clickm writePassword);
 
 
 // // Add copy button
