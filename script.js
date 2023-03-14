@@ -13,13 +13,14 @@ function writePassword() {
   passwordText.value = password;
 }
 
+// THIS GENERATES A PROMPT THAT ASKS THE USER HOW LONG THEY WANT THEIR PASSWORD
 function generatePassword() {
   var charLength = prompt('How long do you want the password?');
   
   // THIS IF STATEMENT LIMITS THE PASSWORDS CHARACTER LENGTH TO BE BETWEEN 8 AND 128
   if (charLength < 8 || charLength > 128) {
     alert('Password must be between 8 and 128 characters.');
-    generatePassword();
+    return generatePassword();
   }
 
   // THIS MAKES THE USERS CHOICE INTO A STRING
@@ -55,13 +56,17 @@ function generatePassword() {
 
   for (var count = 0; count < charLength; count++) {
     var index = Math.floor(Math.random() * choice.length);
-    password = choice[index];
+    password += choice[index];
   }
 
   return password;
 }
 
+// THIS LINE OF CODE GIVES THE BUTTON FUNCTIONALITY
 generateBtn.addEventListener('click', writePassword);
 
-
-// // Add copy button
+function handleclick() {
+  var input = document.getElementById("myText").value;
+  navigator.clipboard.writeText(input);
+  alert("vads: " + input);
+}
