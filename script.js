@@ -64,9 +64,3 @@ function generatePassword() {
 
 // THIS LINE OF CODE GIVES THE BUTTON FUNCTIONALITY
 generateBtn.addEventListener('click', writePassword);
-
-function handleclick() {
-  var input = document.getElementById("myText").value;
-  navigator.clipboard.writeText(input);
-  alert("vads: " + input);
-}
